@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Natal Day, My Love 💜</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');
+
+  body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(-45deg, #6a11cb, #b721ff, #9b4dff, #ce72ff);
+    background-size: 400% 400%;
+    animation: gradientShift 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+  }
+
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  /* Cover Page */
+  #cover {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(135deg, #b721ff, #6a11cb);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: opacity 1.5s ease;
+    z-index: 10;
+  }
+
+  #cover img {
+    width: 300px;
+    max-width: 80%;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    animation: float 5s ease-in-out infinite;
+  }
+
+  #cover h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    margin-top: 20px;
+    text-align: center;
+    padding: 0 15px;
+    text-shadow: 0 0 15px rgba(255,255,255,0.8);
+  }
+
+  #openBtn {
+    margin-top: 30px;
+    background: white;
+    color: #6a11cb;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255,255,255,0.5);
+  }
+
+  #openBtn:hover {
+    background: #6a11cb;
+    color: white;
+    box-shadow: 0 0 25px rgba(255,255,255,0.8);
+  }
+
+  /* Message Page */
+  #content {
+    position: relative;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto; /* ✅ allows scrolling */
+    padding: 30px 20px 80px;
+    box-sizing: border-box;
+  }
+
+  #content img {
+    width: 320px;
+    max-width: 90%;
+    border-radius: 20px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+    margin-bottom: 20px;
+    animation: float 5s ease-in-out infinite;
+  }
+
+  h2 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 2.3rem;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.6);
+  }
+
+  .message {
+    max-width: 600px;
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.7rem;
+    white-space: pre-line;
+    margin: auto;
+    padding-bottom: 50px;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  /* Floating Hearts */
+  .hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+  }
+
+  .heart {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 20px;
+    animation: floatUp 8s linear infinite;
+  }
+
+  @keyframes floatUp {
+    from {
+      transform: translateY(100vh) scale(0.5);
+      opacity: 1;
+    }
+    to {
+      transform: translateY(-10vh) scale(1.5);
+      opacity: 0;
+    }
+  }
+
+  /* Music Button */
+  #musicBtn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: rgba(255,255,255,0.2);
+    border: 2px solid white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+    color: white;
+    cursor: pointer;
+    display: none;
+    transition: all 0.3s ease;
+    z-index: 20;
+  }
+
+  #musicBtn:hover {
+    background: rgba(255,255,255,0.4);
+    transform: scale(1.1);
+  }
+
+  /* ✅ Responsive Adjustments */
+  @media (max-width: 768px) {
+    #cover h1 { font-size: 2.2rem; }
+    h2 { font-size: 1.8rem; }
+    .message { font-size: 1rem; line-height: 1.5rem; padding: 0 10px; }
+    #openBtn { padding: 10px 25px; font-size: 1rem; }
+  }
+
+  @media (max-width: 480px) {
+    #cover h1 { font-size: 1.8rem; }
+    h2 { font-size: 1.5rem; }
+    #musicBtn { width: 45px; height: 45px; font-size: 1.1rem; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- Cover Page -->
+  <div id="cover">
+    <img src="love.png" alt="Our Picture">
+    <h1>Happy Natal Day, My Love 💜</h1>
+    <button id="openBtn">Open My Message 💌</button>
+  </div>
+
+  <!-- Message Page -->
+  <div id="content">
+    <div class="hearts" id="hearts"></div>
+    <img src="love.png" alt="Our Picture">
+    <h2>Happy Natal Day, my love!</h2>
+    <div class="message" id="message"></div>
+  </div>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" src="love.mp3" loop></audio>
+  <button id="musicBtn">🎵</button>
+
+<script>
+const text = `Did you know that your life means the world to me?
+I truly love you in a way that no one can compare or even fathom.
+Every day, I thank God for every blessing in your life,
+and especially for the gift of you —
+for the chance that you exist, and for the chance that you are with me.
+
+As you step into your 26th year,
+I know life may bring more challenges,
+but I want you to know that I am always here for you.
+I am your anchor in the storms,
+your support when things feel heavy,
+and the hand you can always count on.
+
+I know there are many people who surround you,
+but remember this —
+my care, my devotion, and my love for you
+are steadfast, unwavering, and meant to lift you higher.
+Let my love be your motivation,
+your strength, and your comfort as you conquer every obstacle.
+
+I love you — deeply, endlessly, and always you. ❤️`;
+
+const cover = document.getElementById('cover');
+const content = document.getElementById('content');
+const messageEl = document.getElementById('message');
+const music = document.getElementById('bgMusic');
+const musicBtn = document.getElementById('musicBtn');
+
+document.getElementById('openBtn').addEventListener('click', () => {
+  cover.style.opacity = '0';
+  setTimeout(() => {
+    cover.style.display = 'none';
+    content.style.opacity = '1';
+    startTyping();
+    startHearts();
+    music.play().catch(() => {}); // prevent autoplay errors
+    musicBtn.style.display = 'block';
+  }, 1500);
+});
+
+let i = 0;
+function startTyping() {
+  if (i < text.length) {
+    messageEl.textContent += text.charAt(i);
+    i++;
+    setTimeout(startTyping, 40);
+  }
+}
+
+function startHearts() {
+  const hearts = document.getElementById('hearts');
+  setInterval(() => {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.textContent = '💜';
+    heart.style.left = Math.random() * 100 + 'vw';
+    heart.style.fontSize = (Math.random() * 20 + 10) + 'px';
+    heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+    hearts.appendChild(heart);
+    setTimeout(() => heart.remove(), 8000);
+  }, 400);
+}
+
+// Music button toggle
+let playing = true;
+musicBtn.addEventListener('click', () => {
+  if (playing) {
+    music.pause();
+    musicBtn.textContent = '🔇';
+  } else {
+    music.play();
+    musicBtn.textContent = '🎵';
+  }
+  playing = !playing;
+});
+</script>
+
+</body>
+</html>
